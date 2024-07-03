@@ -30,7 +30,7 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: SonarQube Begin
-        run: dotnet sonarscanner begin /k:"dotnet" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://your-sonarqube-instance"
+        run: dotnet sonarscanner begin /k:"dotnet" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="http://${{ secrets.SONAR_HOST_URL }}"
 
       - name: Restore backend dependencies
         run: |
