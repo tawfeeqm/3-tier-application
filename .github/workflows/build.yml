@@ -34,12 +34,12 @@ jobs:
 
       - name: Restore backend dependencies
         run: |
-          cd api/
+          cd api
           dotnet restore
 
       - name: Test Backend
         run: |
-          cd api/
+          cd api
           dotnet test --no-build --configuration Release --verbosity normal
 
       - name: Set up Node.js
@@ -49,7 +49,7 @@ jobs:
 
       - name: Install Frontend Dependencies
         run: |
-          cd ui/
+          cd ui
           npm install
 
       - name: Set up Docker Buildx
