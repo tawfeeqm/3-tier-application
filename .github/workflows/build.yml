@@ -98,7 +98,7 @@ jobs:
         run: |
           echo "$EC2_SSH_KEY" > /tmp/ec2_ssh_key.pem
           chmod 600 /tmp/ec2_ssh_key.pem
-          ssh -i /tmp/ec2_ssh_key.pem $EC2_USER@$EC2_HOST "mkdir -p tawfeeq"
+          ssh -i /tmp/ec2_ssh_key.pem $EC2_USER@$EC2_HOST "mkdir -p tawfeeq && chmod 755 tawfeeq"
           scp -r -i /tmp/ec2_ssh_key.pem docker-compose.yml $EC2_USER@$EC2_HOST:/home/$EC2_USER/tawfeeq/
 
       - name: SSH into EC2 and Deploy
