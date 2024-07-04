@@ -84,14 +84,8 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # - name: Build API Image
-      #   run: docker build -t ${{ vars.DOCKER_USERNAME }}/basic3tierapi:latest api/
-      #
-      # - name: Build UI Image
-      #   run: docker build -t /${{ secrets.DOCKER_USERNAME }}/basic3tierui:latest -f ui/
-      #
-      # - name: Push API Image
-      #   run: docker push ${{ secrets.DOCKER_USERNAME }}/basic3tierapi:latest
-      #
-      # - name: Push UI Image
-      #   run: docker push ${{ secrets.DOCKER_USERNAME }}/basic3tierui:latest
+      - name: Push API Image
+        run: docker push ${{ secrets.DOCKER_USER }}/basic3tierapi:latest
+
+      - name: Push UI Image
+        run: docker push ${{ secrets.DOCKER_USER }}/basic3tierui:latest
