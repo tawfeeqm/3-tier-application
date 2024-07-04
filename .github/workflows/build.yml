@@ -42,12 +42,12 @@ jobs:
 
       - name: Restore backend dependencies
         run: |
-          cd api
+          cd api/Basic3TierAPI
           dotnet restore
 
       - name: Test Backend
         run: |
-          cd api
+          cd api/Tests
           dotnet test --no-build --configuration Release --verbosity normal
 
       - name: Set up Node.js
