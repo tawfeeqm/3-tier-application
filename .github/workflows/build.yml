@@ -85,7 +85,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push API Image
-        run: docker push ${{ secrets.DOCKER_USER }}/basic3tierapi:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/basic3tier-api:latest
 
       - name: Push UI Image
-        run: docker push ${{ secrets.DOCKER_USER }}/basic3tierui:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/basic3tier-ui:latest
