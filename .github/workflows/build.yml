@@ -73,10 +73,10 @@ jobs:
           ssh-keyscan ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
       - name: Build API Image
-        run: docker build -t "${{ DOCKER_USER }}"/basic3tier-api:latest ./api
+        run: docker build -t ${{ secrets.DOCKER_USER }}/basic3tier-api:latest ./api
 
       - name: Build UI Image
-        run: docker build -t "${{ DOCKER_USER }}"/basic3tier-ui:latest ./ui
+        run: docker build -t ${{ secrets.DOCKER_USER }}/basic3tier-ui:latest ./ui
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
