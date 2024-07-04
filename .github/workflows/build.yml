@@ -109,8 +109,8 @@ jobs:
         run: |
            echo "$EC2_SSH_KEY" > /tmp/ec2_ssh_key.pem
            chmod 600 /tmp/ec2_ssh_key.pem
-           ssh -i /tmp/ec2_ssh_key.pem $EC2_USER@$EC2_HOST << 'EOF'
-              cd /home/$EC2_USER/tawfeeq
+           ssh -i /tmp/ec2_ssh_key.pem $EC2_USER@$EC2_HOST << EOF
+              cd tawfeeq
               docker-compose pull
               docker-compose down
               docker-compose up -d
